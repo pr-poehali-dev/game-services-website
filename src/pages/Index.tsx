@@ -40,7 +40,7 @@ export default function Index() {
     {
       id: 1,
       title: "Прокачка персонажа",
-      description: "Быстрая и безопасная прокачка вашего персонажа в Stands 2",
+      description: "Быстрая и безопасная прокачка вашего персонажа в Стендов 2",
       image: "/img/b35e601e-e032-4fee-8e61-d60182cbc669.jpg",
       features: ["24/7 онлайн", "Гарантия безопасности", "Быстрое выполнение"],
       prices: {
@@ -74,7 +74,7 @@ export default function Index() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-card/50 backdrop-blur-sm border border-primary/30 rounded-full px-6 py-2 mb-8">
               <Icon name="Gamepad2" size={20} className="text-primary" />
-              <span className="text-primary font-medium">Stands 2 Services</span>
+              <span className="text-primary font-medium">Стендов 2 Services</span>
             </div>
             
             <h1 className="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent leading-tight">
@@ -84,7 +84,7 @@ export default function Index() {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Профессиональные услуги по прокачке персонажей и повышению рейтинга в Stands 2. 
+              Профессиональные услуги по прокачке персонажей и повышению рейтинга в Стендов 2. 
               Быстро, безопасно, с гарантией результата.
             </p>
             
@@ -248,7 +248,7 @@ export default function Index() {
               {
                 icon: "Users",
                 title: "Опытная команда",
-                description: "Наши игроки имеют многолетний опыт и высокие рейтинги в Stands 2."
+                description: "Наши игроки имеют многолетний опыт и высокие рейтинги в Стендов 2."
               }
             ].map((feature, index) => (
               <Card key={index} className="bg-card/30 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 text-center group">
@@ -293,7 +293,7 @@ export default function Index() {
       <footer className="border-t border-border/20 py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-muted-foreground">
-            © 2024 Stands 2 Gaming Services. Все права защищены.
+            © 2024 Стендов 2 Gaming Services. Все права защищены.
           </p>
         </div>
       </footer>
