@@ -1,9 +1,41 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Rating } from "@/components/ui/rating";
 import Icon from "@/components/ui/icon";
 
 export default function Index() {
+  const testimonials = [
+    {
+      id: 1,
+      name: "CyberWarrior_2024",
+      avatar: "/img/8c375eba-b8c9-4f77-a668-dda9948aa491.jpg",
+      rating: 5,
+      text: "Заказывал прокачку до 100 уровня. Выполнили за 3 дня, аккаунт остался в безопасности. Профессионалы своего дела!",
+      service: "Прокачка персонажа",
+      date: "2 дня назад"
+    },
+    {
+      id: 2,
+      name: "NeonGamer",
+      avatar: "/img/f5e0cac9-09ac-4ab0-b655-5cff4976902e.jpg", 
+      rating: 5,
+      text: "Поднял рейтинг с серебра до золота. Команда играет честно, без читов. Рекомендую всем!",
+      service: "Повышение рейтинга",
+      date: "1 неделю назад"
+    },
+    {
+      id: 3,
+      name: "ElectricStorm",
+      avatar: "/img/662291c7-23cc-4d91-b431-0fa0c828f86a.jpg",
+      rating: 4.5,
+      text: "Быстрая прокачка, адекватные цены. Немного затянули с выполнением, но результат отличный!",
+      service: "Прокачка персонажа", 
+      date: "3 дня назад"
+    }
+  ];
+
   const services = [
     {
       id: 1,
@@ -134,8 +166,63 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Testimonials Section */}
       <section className="py-20 bg-muted/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Отзывы клиентов
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Что говорят наши клиенты о качестве наших услуг
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {testimonials.map((testimonial) => (
+              <Card key={testimonial.id} className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 group">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <Avatar className="w-12 h-12 border-2 border-primary/30">
+                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                      <AvatarFallback className="bg-primary/20 text-primary font-bold">
+                        {testimonial.name.charAt(0)}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-foreground">{testimonial.name}</h4>
+                      <div className="flex items-center gap-2 mb-2">
+                        <Rating rating={testimonial.rating} size={16} />
+                        <span className="text-sm text-muted-foreground">
+                          {testimonial.rating}/5
+                        </span>
+                      </div>
+                      <Badge variant="outline" className="border-secondary/30 text-secondary bg-secondary/10 text-xs">
+                        {testimonial.service}
+                      </Badge>
+                    </div>
+                  </div>
+                  
+                  <blockquote className="text-muted-foreground mb-4 leading-relaxed">
+                    "{testimonial.text}"
+                  </blockquote>
+                  
+                  <div className="flex items-center justify-between text-sm text-muted-foreground">
+                    <span>{testimonial.date}</span>
+                    <div className="flex items-center gap-1">
+                      <Icon name="CheckCircle" size={16} className="text-primary" />
+                      <span>Подтвержден</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
